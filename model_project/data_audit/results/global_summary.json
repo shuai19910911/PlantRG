@@ -1,0 +1,14 @@
+{
+  "manifest_files": 1574,
+  "audited_files": 1574,
+  "species": 787,
+  "cds_files": 787,
+  "protein_files": 787,
+  "cds_records": 1605489,
+  "protein_records": 1605489,
+  "invalid_record_files": 32,
+  "duplicate_id_files": 0,
+  "empty_record_files": 0,
+  "species_with_unpaired_ids": 0,
+  "all_records_table": "model_project/data_audit/results/tables/all_records.tsv"
+}

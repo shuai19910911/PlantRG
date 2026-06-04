@@ -8,6 +8,11 @@ downloads/
 *.part
 *.tar.gz
 
+# Large audit outputs
+model_project/data_audit/logs/
+model_project/data_audit/results/per_file_records/
+model_project/data_audit/results/tables/all_records.tsv
+
 # Retry/intermediate metadata that can be regenerated
 metadata/*download*.log
 metadata/*failures*.tsv
@@ -28,4 +33,3 @@ __pycache__/
 !metadata/plantrg_full_manifest.csv
 !metadata/plantrg_sequence_manifest.csv
 !metadata/plantrg_manifest_enumeration.log
-

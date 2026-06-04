@@ -26,6 +26,8 @@ PlantRG FASTA 数据已下载并完成校验：
 - `PlantRG_data_introduction.md`：PlantRG 数据介绍、下载记录和最终校验结果。
 - `model_project/PlantRG模型项目长期记忆.md`：模型项目长期记忆，记录论文可行性判断、推荐路线和风险。
 - `model_project/模型结构解析.md`：拟建模型框架、数据流、训练任务和评估设计。
+- `model_project/项目进展计划.md`：模型项目阶段进展、当前结论和后续计划。
+- `model_project/data_audit/`：第一阶段数据审计脚本、Slurm 任务和轻量结果。
 - `scripts/`：下载和补跑脚本。
 - `metadata/plantrg_full_manifest.csv`：完整 FASTA 下载清单。
 
@@ -68,17 +70,27 @@ sbatch -p q07 -c 30 run.sh
 - 已完成 PlantRG FASTA 数据下载。
 - 已完成 manifest 对照校验。
 - 已形成模型项目长期记忆。
-- 已建立 GitHub 仓库准备文件。
+- 已完成第一阶段数据审计，并通过 Slurm 任务 `8438806` 在 `q07` 分区完成计算。
+- 已将项目说明、模型结构解析和阶段审计结果同步到 GitHub。
+
+第一阶段数据审计结论：
+
+- CDS 记录数：1,605,489
+- protein 记录数：1,605,489
+- CDS/protein ID 配对完整，未发现未配对物种。
+- 未发现空序列或重复 ID。
+- 32 个文件包含非标准字符，需要在建模前制定清洗策略。
+- protein 建模路线当前更稳；CDS 建模建议作为补充任务或敏感性分析。
 
 ## 下一阶段计划
 
 ### 阶段 1：数据审计
 
-- 解析 787 个 protein FASTA 和 787 个 CDS FASTA。
-- 统计每个物种的抗性基因数量。
-- 统计 CDS/protein 长度分布。
-- 检查异常序列、空序列、非标准字符。
-- 检查 CDS 和 protein 是否可一一对应。
+- 已解析 787 个 protein FASTA 和 787 个 CDS FASTA。
+- 已统计每个物种的抗性基因数量。
+- 已统计 CDS/protein 长度分布。
+- 已检查异常序列、空序列、非标准字符。
+- 已确认 CDS 和 protein ID 可一一对应。
 
 ### 阶段 2：标签和负样本
 
@@ -100,4 +112,3 @@ sbatch -p q07 -c 30 run.sh
 - 分析随机划分与跨物种划分的性能差异。
 - 做模型解释和候选基因发现。
 - 整理图表、方法和可复现实验流程。
-
