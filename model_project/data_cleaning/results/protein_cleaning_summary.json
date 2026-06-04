@@ -1,0 +1,29 @@
+{
+  "protein_files": 787,
+  "species": 787,
+  "total_records": 1605489,
+  "kept_records": 1583910,
+  "excluded_records": 21579,
+  "excluded_dot": 20057,
+  "excluded_internal_stop": 1522,
+  "excluded_invalid_chars": 21579,
+  "excluded_empty": 0,
+  "terminal_stop_stripped_records": 203635,
+  "terminal_stop_stripped_chars": 203638,
+  "retention_rate": 0.9865592352236608,
+  "mean_length_all": 633.0500601374409,
+  "mean_length_kept": 632.2058993250879,
+  "top_invalid_patterns": [
+    [
+      ".",
+      20057
+    ],
+    [
+      "*",
+      1522
+    ]
+  ],
+  "strict_fasta": "model_project/data_cleaning/results/positive_protein_strict.fa",
+  "strict_index": "model_project/data_cleaning/results/positive_protein_strict_index.tsv",
+  "species_table": "model_project/data_cleaning/results/tables/protein_cleaning_by_species.tsv"
+}

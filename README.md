@@ -71,6 +71,7 @@ sbatch -p q07 -c 30 run.sh
 - 已完成 manifest 对照校验。
 - 已形成模型项目长期记忆。
 - 已完成第一阶段数据审计，并通过 Slurm 任务 `8438806` 在 `q07` 分区完成计算。
+- 已完成第二阶段 protein 正样本严格清洗，并通过 Slurm 任务 `8438823` 在 `q07` 分区完成计算。
 - 已将项目说明、模型结构解析和阶段审计结果同步到 GitHub。
 
 第一阶段数据审计结论：
@@ -81,6 +82,17 @@ sbatch -p q07 -c 30 run.sh
 - 未发现空序列或重复 ID。
 - 32 个文件包含非标准字符，需要在建模前制定清洗策略。
 - protein 建模路线当前更稳；CDS 建模建议作为补充任务或敏感性分析。
+
+第二阶段 protein 清洗结论：
+
+- 原始 protein 记录数：1,605,489
+- 严格清洗保留记录数：1,583,910
+- 排除记录数：21,579
+- 保留率：98.6559%
+- 已剥离末端 `*` 终止符记录数：203,635
+- 含 `.` 排除数：20,057
+- 含内部 `*` 排除数：1,522
+- 清洗后的本地正样本 FASTA：`model_project/data_cleaning/results/positive_protein_strict.fa`
 
 ## 下一阶段计划
 
@@ -94,7 +106,8 @@ sbatch -p q07 -c 30 run.sh
 
 ### 阶段 2：标签和负样本
 
-- 确认 PlantRG FASTA header 是否含有 family/domain 信息。
+- 已完成 protein 正样本严格清洗。
+- 下一步确认 PlantRG FASTA header 是否含有 family/domain 信息。
 - 如果无精细标签，则使用 HMMER/Pfam 自行重注释。
 - 从外部 proteome 构建非抗性基因负样本。
 - 使用 MMseqs2/CD-HIT 做同源去冗余。
