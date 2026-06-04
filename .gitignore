@@ -1,0 +1,31 @@
+# Large downloaded data
+downloads/
+
+# Runtime logs and temporary outputs
+*.log
+*.nohup.log
+*.pid
+*.part
+*.tar.gz
+
+# Retry/intermediate metadata that can be regenerated
+metadata/*download*.log
+metadata/*failures*.tsv
+metadata/*missing*.csv
+metadata/*batch*.tsv
+metadata/*batch*.log
+metadata/*pid
+metadata/*nohup.log
+metadata/test_download_select.tar.gz
+
+# Python/cache files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Keep selected lightweight metadata
+!metadata/
+!metadata/plantrg_full_manifest.csv
+!metadata/plantrg_sequence_manifest.csv
+!metadata/plantrg_manifest_enumeration.log
+
